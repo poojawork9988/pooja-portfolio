@@ -54,6 +54,21 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.72)}}
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding:60px 0}.photo-wrap{order:-1}.photo{width:250px}.edu-grid,.cert-grid{grid-template-columns:1fr 1fr}.project-grid,.two{grid-template-columns:1fr}.exp{grid-template-columns:1fr;gap:8px}}
 @media(max-width:560px){.navlinks{display:none}.edu-grid,.cert-grid{grid-template-columns:1fr}h1{letter-spacing:-3px}.card{padding:21px}section{padding:70px 0}}
+
+/* Enhanced visual polish */
+body{scroll-behavior:smooth}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 12% 18%,rgba(125,156,255,.10),transparent 28%),radial-gradient(circle at 88% 45%,rgba(85,210,190,.08),transparent 30%)}
+.nav{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.photo img{transition:transform .5s ease,filter .5s ease}
+.photo:hover img{transform:scale(1.035);filter:saturate(1.05)}
+.card,.project,.edu,.cert,.exp{transition:transform .3s ease,box-shadow .3s ease}
+.card:hover,.project:hover,.edu:hover,.cert:hover,.exp:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(0,0,0,.18)}
+.section h2:after{content:"";display:block;width:60px;height:4px;margin-top:10px;border-radius:999px;background:linear-gradient(90deg,#7d9cff,#55d2be)}
+.social a,.btn{transition:transform .25s ease,box-shadow .25s ease}
+.social a:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -75,17 +90,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 <div class="photo-wrap">
 <div class="photo">
-<img src="pooja.jpg" alt="Pooja Sandip Patil" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;">
+<img src="pooja.jpeg" alt="Pooja Sandip Patil" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;">
 </div>
 </div>
 </header>
 
-<section id="about"><div class="container reveal">
+<section class="reveal" id="about"><div class="container reveal">
 <div class="section-head"><div class="kicker">01 · Professional Summary</div><h2 class="section-title">About Me</h2></div>
 <div class="card summary">Artificial Intelligence undergraduate with hands-on experience in Full Stack Development, Machine Learning, Generative AI, RESTful API development, and Data Analytics. Proficient in Python, Java, C++, SQL, React.js, Flask, TensorFlow, Git, and cloud technologies. Skilled in developing scalable AI applications, full-stack software, and data-driven applications.</div>
 </div></section>
 
-<section id="education"><div class="container reveal">
+<section class="reveal" id="education"><div class="container reveal">
 <div class="section-head"><div class="kicker">02 · Education</div><h2 class="section-title">Academic Journey</h2></div>
 <div class="edu-grid">
 <div class="card edu-card"><span class="year">2024–2027 · 8.46/10</span><h3>B.Tech – Artificial Intelligence</h3><p>Usha Mittal Institute of Technology, Mumbai</p><p><strong>Examination:</strong> Graduation</p></div>
@@ -94,7 +109,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 </div></section>
 
-<section><div class="container reveal">
+<section class="reveal"><div class="container reveal">
 <div class="section-head"><div class="kicker">03 · Certifications</div><h2 class="section-title">Certifications</h2></div>
 <div class="cert-grid">
 <div class="card cert"><strong>Cisco Networking Academy – Introduction to Modern AI</strong></div>
@@ -104,7 +119,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 </div></section>
 
-<section id="experience"><div class="container reveal">
+<section class="reveal" id="experience"><div class="container reveal">
 <div class="section-head"><div class="kicker">04 · Work Experience</div><h2 class="section-title">Professional Experience</h2></div>
 <div class="card exp">
 <div class="date">Jun’23 – Jul’23<br>Pune</div>
@@ -118,7 +133,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 </div></section>
 
-<section id="projects"><div class="container reveal">
+<section class="reveal" id="projects"><div class="container reveal">
 <div class="section-head"><div class="kicker">05 · Projects</div><h2 class="section-title">Featured Projects</h2><p class="section-desc">Project descriptions and technology stacks are presented from the resume.</p></div>
 <div class="project-grid">
 <article class="card project"><h3>CompileX – Online Compiler with AI Error Resolution</h3><div class="stack">Python, Flask, React.js, Next.js, HTML, CSS, JavaScript, GCC, JDK, Node.js</div><ul class="bullets"><li>Designed an online compiler supporting C, C++, Java, Python, and JavaScript.</li><li>Developed Flask RESTful APIs for code execution and AI-assisted error analysis.</li><li>Implemented syntax highlighting, code translation, and AI-assisted code explanation.</li><li>Integrated Generative AI to automate debugging and improve developer productivity.</li></ul></article>
@@ -128,7 +143,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 </div></section>
 
-<section id="skills"><div class="container reveal">
+<section class="reveal" id="skills"><div class="container reveal">
 <div class="section-head"><div class="kicker">06 · Skills</div><h2 class="section-title">Technical Skills</h2></div>
 <div class="two">
 <div class="card"><h3>Programming Languages</h3><div class="skills" style="margin-top:15px"><span class="skill">C</span><span class="skill">C++</span><span class="skill">Java</span><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span></div></div>
@@ -138,7 +153,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 </div></section>
 
-<section><div class="container reveal">
+<section class="reveal"><div class="container reveal">
 <div class="section-head"><div class="kicker">07 · Additional Information</div><h2 class="section-title">Beyond the Tech Stack</h2></div>
 <div class="two">
 <div class="card"><h3>Areas of Interest</h3><p style="color:var(--muted);margin-top:10px">Artificial Intelligence, Machine Learning, Full Stack Development, Data Analytics</p></div>
@@ -146,7 +161,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
 </div>
 </div></section>
 
-<section id="contact" class="contact"><div class="container reveal">
+<section class="reveal" id="contact" class="contact"><div class="container reveal">
 <div class="card">
 <div class="kicker">08 · Contact</div><h2 class="section-title">Let's Connect</h2>
 <p class="section-desc" style="margin:10px auto 0">Mumbai, India · +91-9699882047 · poojapatil5470@gmail.com</p>
@@ -165,6 +180,10 @@ const observer = new IntersectionObserver((entries)=>{
  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+<script>
+const revealObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');revealObserver.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 </script>
 </body>
 </html>
